@@ -10,36 +10,11 @@
   <h2>RSA Offline Audit</h2>
   <div id="modeIndicator"></div>
 
-  <form id="auditForm">
-    <label>Audit No:</label><br>
-    <input type="text" id="auditNo" required><br><br>
+  <button onclick="loadQuestions()">Load Questions From Zoho</button>
+  <div id="questionContainer"></div>
 
-    <h3>DH Audit Section</h3>
-
-    <label>Question No:</label><br>
-    <input type="text" id="qno"><br><br>
-
-    <label>Description:</label><br>
-    <textarea id="desc"></textarea><br><br>
-
-    <label>Result:</label><br>
-    <select id="result">
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-      <option value="NA">NA</option>
-    </select><br><br>
-
-    <label>Photo 1:</label><br>
-    <input type="file" id="photo1" accept="image/*" capture="environment"><br><br>
-
-    <label>Photo 2:</label><br>
-    <input type="file" id="photo2" accept="image/*" capture="environment"><br><br>
-
-    <label>Document Upload:</label><br>
-    <input type="file" id="doc"><br><br>
-
-    <button type="submit">Submit Audit</button>
-  </form>
+  <hr>
+  <button onclick="submitAudit()">Submit Audit</button>
 
   <script src="https://unpkg.com/dexie@3.2.2/dist/dexie.js"></script>
   <script src="db.js"></script>
