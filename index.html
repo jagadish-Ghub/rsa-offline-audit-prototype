@@ -3,25 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RSA Offline Audit Prototype</title>
+  <title>RSA Audit - Offline PWA</title>
 </head>
 
-<body style="font-family: Arial; margin: 20px">
-  <h1>rsa-offline-audit-prototype</h1>
-  <p>RSA offline audit prototype</p>
+<body style="font-family: Arial; margin: 20px;">
+  <h2>RSA Offline Audit</h2>
+  <div id="modeIndicator"></div>
 
-  <!-- ROOT ELEMENT (VERY IMPORTANT) -->
-  <div id="root"></div>
+  <form id="auditForm">
+    <label>Audit No:</label><br>
+    <input type="text" id="auditNo" required><br><br>
 
-  <!-- React + ReactDOM -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <h3>DH Audit Section</h3>
 
-  <!-- Dexie for IndexedDB -->
+    <label>Question No:</label><br>
+    <input type="text" id="qno"><br><br>
+
+    <label>Description:</label><br>
+    <textarea id="desc"></textarea><br><br>
+
+    <label>Result:</label><br>
+    <select id="result">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="NA">NA</option>
+    </select><br><br>
+
+    <label>Photo 1:</label><br>
+    <input type="file" id="photo1" accept="image/*" capture="environment"><br><br>
+
+    <label>Photo 2:</label><br>
+    <input type="file" id="photo2" accept="image/*" capture="environment"><br><br>
+
+    <label>Document Upload:</label><br>
+    <input type="file" id="doc"><br><br>
+
+    <button type="submit">Submit Audit</button>
+  </form>
+
   <script src="https://unpkg.com/dexie@3.2.2/dist/dexie.js"></script>
-
-  <!-- Your JS -->
-  <script src="./app.js"></script>
-  <script src="./db.js"></script>
+  <script src="db.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

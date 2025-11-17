@@ -1,4 +1,5 @@
-const db = new Dexie("AuditDB");
+const db = new Dexie("RSA_Audit_DB");
+
 db.version(1).stores({
-  questions: "id,questionNo,description,result,synced" // blobs stored automatically
+    audits: "++id, auditNo, status"
 });
